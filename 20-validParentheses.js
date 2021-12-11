@@ -1,31 +1,31 @@
 // const str = process.argv.slice(2)[0]
-const s = "("
+const s = '(';
 
 const IsValid = (s) => {
     const map = {
         '(': ')',
         '[': ']',
-        '{': '}'
-    }
+        '{': '}',
+    };
 
     const stack = [];
 
     for (let item of s) {
         if (item in map) {
-            stack.push(item)
+            stack.push(item);
         } else {
-            const last = stack.slice(-1)
+            const last = stack.slice(-1);
             if (item === map[last]) {
-                stack.pop()
+                stack.pop();
             } else {
-                return false
+                return false;
             }
         }
     }
 
-    if (stack.length > 0) return false
+    if (stack.length > 0) return false;
 
-    return true
-}
+    return true;
+};
 
-console.log(IsValid(s))
+console.log(IsValid(s));
