@@ -1,22 +1,22 @@
 class ListNode {
     constructor(val, next) {
-        this.val = val === undefined ? 0 : val;
-        this.next = next === undefined ? null : next;
+        this.val = (val === undefined ? 0 : val);
+        this.next = (next === undefined ? null : next);
     }
 }
 
-const removeElements = function (head, val) {
-    let list = new ListNode();
-    let newHead = list;
+const removeElements = function(head, val) {
+    let list = new ListNode()
+    let newHead = list
     while (head !== null) {
         if (head.val !== val) {
-            list.next = new ListNode(head.val);
-            list = list.next;
+            list.next = new ListNode(head.val)
+            list = list.next
         }
-        head = head.next;
+        head = head.next
     }
-
-    return newHead.next;
+    
+    return newHead.next
 };
 
 const linkedList = {
@@ -33,13 +33,13 @@ const linkedList = {
                         val: 5,
                         next: {
                             val: 6,
-                            next: null,
-                        },
-                    },
-                },
-            },
-        },
-    },
-};
+                            next: null
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
-console.log(removeElements(linkedList, 6));
+console.log(removeElements(linkedList, 6))
