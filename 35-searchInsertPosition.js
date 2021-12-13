@@ -15,11 +15,8 @@ const searchInsert = (nums, target) => {
         }
     }
 
-    // if target isn't in nums
     nums.push(target)
     nums.sort((a, b) => a - b)
 
     return nums.indexOf(target)
-}
-
-console.log(searchInsert([1, 2, 4], 3))
+};
